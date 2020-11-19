@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class InGameButtonsAction : MonoBehaviour
 {
     [SerializeField] private GameObject _losePanel;
-    [SerializeField] private Player _player;
+    [SerializeField] private GameState _gameState;
 
     public void OnRestartButtonClick()
     {
         Time.timeScale = 1;
-        _player.ResetGame();
+        _gameState.ResetGame();
         _losePanel.SetActive(false);
     }
 

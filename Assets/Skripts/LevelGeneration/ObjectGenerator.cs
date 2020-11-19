@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGenerator : ObjectPool
+public class ObjectGenerator : ObjectPool 
 {
     [SerializeField] private GameObject _template;
     [SerializeField] private Transform _spawnPoint;
@@ -24,16 +24,16 @@ public class EnemyGenerator : ObjectPool
 
         if (_elapsedTime >= _delayBetweenSpawn)
         {
-            if (TryGetObject(out GameObject box))
+            if (TryGetObject(out GameObject gameObject))
             {
                 _elapsedTime = 0;
 
-                box.SetActive(true);
-                box.transform.position = _spawnPoint.position;
+                gameObject.SetActive(true);
+                gameObject.transform.position = _spawnPoint.position;
 
                 _delayBetweenSpawn = Random.Range(_minTimeBetweenSpawn, _maxTimeBetweenSpawn);
 
-                DisableObjectWhenOutOfScreen();
+                DisableUnvisibleObjects();
             }
         }
     }

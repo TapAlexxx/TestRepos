@@ -32,7 +32,7 @@ public class ObjectPool : MonoBehaviour
         return result != null;
     }
 
-    protected void DisableObjectWhenOutOfScreen()
+    protected void DisableUnvisibleObjects()
     {
         Vector3 disablePoint = _camera.ViewportToWorldPoint(new Vector2(0, 0.5f));
 
