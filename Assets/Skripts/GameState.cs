@@ -10,9 +10,7 @@ public class GameState : MonoBehaviour
     [SerializeField] private GameObject _losePanel;
     [SerializeField] private CameraTracker _cameraTracker;
 
-
     public event UnityAction PlayerDead;
-
 
     private void Awake()
     {
@@ -31,7 +29,7 @@ public class GameState : MonoBehaviour
 
     public void ResetGame()
     {
-        _cameraTracker.SetNewTarget(_player.transform);
+        _cameraTracker.Track(_player.transform);
         _player.Revive();
         foreach (var generator in _objectGenerators)
         {

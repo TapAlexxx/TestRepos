@@ -12,10 +12,10 @@ public class CameraTracker : MonoBehaviour
     private void Update()
     {
         if (_target != null)
-            Track(_target);
+            UpdatePosition(_target);
     }
 
-    public void Track(Transform target)
+    public void UpdatePosition(Transform target)
     {
         Vector3 targetPosition = new Vector3(target.position.x + _offset, transform.position.y, transform.position.z);
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * _damp);
@@ -26,7 +26,7 @@ public class CameraTracker : MonoBehaviour
         _target = null;
     }
 
-    public void SetNewTarget(Transform target)
+    public void Track(Transform target)
     {
         _target = target;
     }

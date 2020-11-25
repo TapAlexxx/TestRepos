@@ -11,21 +11,21 @@ public class Player : MonoBehaviour
 
     public event UnityAction<int> CoinCountChanged;
     public event UnityAction Dead;
-    
-    public int CoinCount { get; private set; }
+
+    private int _coinsCount;
 
     public void Revive()
     {
         transform.position = _startPosition.position;
 
-        CoinCount = 0;
-        CoinCountChanged?.Invoke(CoinCount);
+        _coinsCount = 0;
+        CoinCountChanged?.Invoke(_coinsCount);
     }
 
     public void AddCoin()
     {
-        CoinCount++;
-        CoinCountChanged?.Invoke(CoinCount);
+        _coinsCount++;
+        CoinCountChanged?.Invoke(_coinsCount);
     }
 
     public void Die()
