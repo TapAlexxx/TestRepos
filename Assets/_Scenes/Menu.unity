@@ -1783,3 +1783,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _aboutAuthorsPanel: {fileID: 1150149237}
+  _authorsPanelImage: {fileID: 1150149238}

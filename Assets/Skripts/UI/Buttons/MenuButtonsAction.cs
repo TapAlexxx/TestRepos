@@ -6,6 +6,7 @@ using DG.Tweening;
 public class MenuButtonsAction : MonoBehaviour
 {
     [SerializeField] private GameObject _aboutAuthorsPanel;
+    [SerializeField] private Image _authorsPanelImage;
 
     public void OnPlayButtonClick()
     {
@@ -14,9 +15,9 @@ public class MenuButtonsAction : MonoBehaviour
 
     public void OnAboutAuthorsButtonClick()
     {
-        _aboutAuthorsPanel.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        _authorsPanelImage.color = new Color(255, 255, 255, 0);
         _aboutAuthorsPanel.SetActive(true);
-        _aboutAuthorsPanel.GetComponent<Image>().DOFade(1, 2f);
+        _authorsPanelImage.DOFade(1, 2f);
     }
 
     public void OnClosePanelButtonClick()
