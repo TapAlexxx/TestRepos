@@ -15,7 +15,7 @@ public class CameraTracker : MonoBehaviour
             UpdatePosition(_target);
     }
 
-    public void UpdatePosition(Transform target)
+    private void UpdatePosition(Transform target)
     {
         Vector3 targetPosition = new Vector3(target.position.x + _offset, transform.position.y, transform.position.z);
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * _damp);
